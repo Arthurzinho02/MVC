@@ -29,12 +29,12 @@ class ControllerExcluirTarefa:
             print("Número Inválido")
 
 
-class ControlarListarTarefa:
+class ControllerListarTarefa:
     def __init__(self):
         try:
             cont = 0
             for tarefa in todo.ListarTarefa():
                 cont += 1
-                print(f"{cont}- {tarefa}")
+                print(f"{cont}- {tarefa.strip()}")
         except Exception:
             print("Inválido")

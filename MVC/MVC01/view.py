@@ -14,19 +14,19 @@ while True:
             os.system("cls")        
         case "2":
             print("Lista:")
-            listartarefa = ControlarListarTarefa()
+            listartarefa = ControllerListarTarefa()
             excluir = input("Digite o índice da tarefa a ser excluida: ")
             excluirtarefa = ControllerExcluirTarefa(excluir)
             os.system("pause")
             os.system("cls")
             print("Lista Nova:")        
-            listartarefa = ControlarListarTarefa()
+            listartarefa = ControllerListarTarefa()
             os.system("pause")
             os.system("cls")
 
 
         case "3":
-            listartarefa = ControlarListarTarefa()
+            listartarefa = ControllerListarTarefa()
             os.system("pause")
             os.system("cls")        
 
