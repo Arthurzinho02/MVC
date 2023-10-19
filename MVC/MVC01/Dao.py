@@ -1,12 +1,14 @@
+from random import *
 Arquivo = "ToDo.txt"
-        
+
 class DaoAdicionarTarefa:
     def __init__(self, tarefa):
         self.tarefa = tarefa
 
     def AdicionarTarefa(self):
+        x = randint(1000, 9999)
         with open(Arquivo, "a") as arquivo:
-            arquivo.write(f"{self.tarefa}\n")
+            arquivo.write(f"{x} \t {self.tarefa}\n")
         return True
         
 class DaoListarTarefa:

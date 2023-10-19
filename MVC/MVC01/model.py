@@ -1,7 +1,6 @@
 from Dao import *
 
 class ToDo:
-
     def AdicionarTarefas(self, tarefa):
         self.tarefa = tarefa
         dao = DaoAdicionarTarefa(self.tarefa)

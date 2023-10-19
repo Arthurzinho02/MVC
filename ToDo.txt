@@ -1,2 +1,1 @@
-cozinhar
-Ir ao hospital
+ID: 	 Tarefas:

@@ -32,9 +32,11 @@ class ControllerExcluirTarefa:
 class ControllerListarTarefa:
     def __init__(self):
         try:
-            cont = 0
-            for tarefa in todo.ListarTarefa():
+            cont = -1
+            for tarefas in todo.ListarTarefa():
                 cont += 1
-                print(f"{cont}- {tarefa.strip()}")
+                if cont >= 1:
+                    tarefas = tarefas[7:-1]
+                    print(f"{cont} - {tarefas}")
         except Exception:
             print("Inválido")
