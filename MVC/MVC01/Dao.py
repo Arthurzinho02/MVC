@@ -5,8 +5,7 @@ class DaoAdicionarTarefa:
     def __init__(self, tarefa):
         self.tarefa = tarefa
 
-    def AdicionarTarefa(self):
-        x = randint(1000, 9999)
+    def AdicionarTarefa(self, x):
         with open(Arquivo, "a") as arquivo:
             arquivo.write(f"{x} \t {self.tarefa}\n")
         return True
