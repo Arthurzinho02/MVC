@@ -3,4 +3,5 @@ E	8822	Ir ao mercado
 C	6967	Cinema
 C	6053	Me tacar de um predio
 E	5223	comer
-A	2506	comprar
+E	2506	comprar
+C	2127	Ir ao shopping

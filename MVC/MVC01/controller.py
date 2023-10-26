@@ -1,6 +1,5 @@
 from model import *
 
-
 class ControllerMudarTarefa:
     def __init__(self, tarefa_Nova, indice, Letra):
         try:
