@@ -1,5 +1,50 @@
 from model import *
 
+
+class ControllerMudarTarefa:
+    def __init__(self, tarefa_Nova, indice, Letra):
+        try:
+            indice = int(indice)
+            if tarefa_Nova == "":
+                print("Digite novamente, tarefa inválida")
+            else:
+                indice -=1
+                lista = []
+                dao = DaoListarTarefa()
+                cont = -1
+                for tarefas in dao.listar():
+                    cont += 1
+                    if cont >= 1:
+                        letra = tarefas[:1]
+                        if letra == "A":
+                            lista = tarefas.split("\t", 4)               
+                            id = lista[1]
+                            id = int(id)
+                            lista.append(id)
+                cont = -1
+                for tarefas in dao.listar():
+                    cont += 1
+                    if cont >= 1:
+                        lista = tarefas.split("\t", 4)               
+                        id = lista[1]
+                        id = int(id)
+                        tarefa_A = tarefas[7:-1]
+                        if id == lista[indice]:
+                            if Letra == "A":
+                                tarefa_Atualizada = f"A\t{id}\t{tarefa_Nova}\n"
+                                todo.MudarTarefa(tarefas, tarefa_Atualizada)
+                                break
+                            else:
+                                tarefa_Atualizada = f"{Letra}\t{id}\t{tarefa_A}\n"
+                                todo.MudarTarefa(tarefas, tarefa_Atualizada)
+                                break
+                        else:
+                            print("Tarefa inválida, tente novamente!")
+                            break
+        except Exception:
+            print("Inválido")
+
+
 class ControllerAdicionarTarefa:
     def __init__(self, tarefa):
         try:
@@ -10,9 +55,10 @@ class ControllerAdicionarTarefa:
                 for tarefas in todo.ListarTarefa():
                     cont += 1
                     if cont >= 1:
-                        tarefas = tarefas[:4]
-                        tarefas = int(tarefas)
-                        if x != tarefas: 
+                        lista = tarefas.split("\t", 4)               
+                        id = lista[1]
+                        id = int(id)
+                        if x != id: 
                             if self.tarefa == "":
                                 print("Digite novamente, tarefa inválida")
                             else:
@@ -36,29 +82,16 @@ class ControllerAdicionarTarefa:
         except Exception:
             print("Inválido")
 
-
-class ControllerExcluirTarefa:
-    def __init__(self, excluir):
-        try:
-            x = int (excluir)
-            self.excluir = x - 1
-
-            if todo.ExcluirTarefa(self.excluir) == True:
-                print("Tarefa excluida")
-            else:
-                print("Tarefa não foi exclui")
-        except Exception:
-            print("Número Inválido")
-
-
 class ControllerListarTarefa:
-    def __init__(self):
+    def __init__(self, Letra):
         try:
             cont = -1
             for tarefas in todo.ListarTarefa():
                 cont += 1
                 if cont >= 1:
-                    tarefas = tarefas[7:-1]
-                    print(f"{cont} - {tarefas}")
+                    letra = tarefas[:1]
+                    if letra == Letra:
+                        tarefas = tarefas[7:-1]
+                        print(f"{cont} - {tarefas}")
         except Exception:
             print("Inválido")

@@ -1,1 +1,4 @@
-ID 	 Tarefas:
+Status:	ID:	Tarefa:
+A	8822	Ir ao mercado
+A	6967	Ir ao petshop
+A	6053	Limpar o banheiro
