@@ -8,8 +8,8 @@ class ControllerMudarTarefa:
             if tarefa_Nova == "":
                 print("Digite novamente, tarefa inválida")
             else:
-                indice -=1
-                lista = []
+
+                lista_id = []
                 dao = DaoListarTarefa()
                 cont = -1
                 for tarefas in dao.listar():
@@ -20,27 +20,28 @@ class ControllerMudarTarefa:
                             lista = tarefas.split("\t", 4)               
                             id = lista[1]
                             id = int(id)
-                            lista.append(id)
-                cont = -1
-                for tarefas in dao.listar():
-                    cont += 1
-                    if cont >= 1:
-                        lista = tarefas.split("\t", 4)               
-                        id = lista[1]
-                        id = int(id)
-                        tarefa_A = tarefas[7:-1]
-                        if id == lista[indice]:
-                            if Letra == "A":
-                                tarefa_Atualizada = f"A\t{id}\t{tarefa_Nova}\n"
-                                todo.MudarTarefa(tarefas, tarefa_Atualizada)
-                                break
-                            else:
-                                tarefa_Atualizada = f"{Letra}\t{id}\t{tarefa_A}\n"
-                                todo.MudarTarefa(tarefas, tarefa_Atualizada)
-                                break
-                        else:
-                            print("Tarefa inválida, tente novamente!")
-                            break
+                            lista_id.append(id)
+                if indice <= len(lista_id):
+                    indice -=1
+                    cont = -1
+                    for tarefas in dao.listar():
+                        cont += 1
+                        if cont >= 1:
+                            lista = tarefas.split("\t", 4)               
+                            id = lista[1]
+                            id = int(id)
+                            tarefa_A = tarefas[7:-1]
+                            if id == lista_id[indice]:
+                                if Letra == "A":
+                                    tarefa_Atualizada = f"A\t{id}\t{tarefa_Nova}\n"
+                                    todo.MudarTarefa(tarefas, tarefa_Atualizada)
+                                    break
+                                else:
+                                    tarefa_Atualizada = f"{Letra}\t{id}\t{tarefa_A}\n"
+                                    todo.MudarTarefa(tarefas, tarefa_Atualizada)
+                                    break
+                else:
+                    print("Indice inválido, tente novamente")
         except Exception:
             print("Inválido")
 
@@ -93,5 +94,7 @@ class ControllerListarTarefa:
                     if letra == Letra:
                         tarefas = tarefas[7:-1]
                         print(f"{cont} - {tarefas}")
+                    else:
+                        cont -= 1
         except Exception:
             print("Inválido")

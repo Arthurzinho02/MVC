@@ -1,4 +1,6 @@
 Status:	ID:	Tarefa:
-A	8822	Ir ao mercado
-A	6967	Ir ao petshop
-A	6053	Limpar o banheiro
+E	8822	Ir ao mercado
+C	6967	Cinema
+C	6053	Me tacar de um predio
+E	5223	comer
+A	2506	comprar
