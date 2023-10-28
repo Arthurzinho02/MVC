@@ -8,3 +8,5 @@ C	2127	Ir ao shopping
 A	3667	comprar chocolate
 C	8315	Ir ao parque
 E	5893	Festa fantasia
+A	2379	Shoppe
+A	8840	petshop
