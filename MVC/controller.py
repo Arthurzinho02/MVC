@@ -8,7 +8,6 @@ class ControllerMudarTarefa:
                 print("Digite novamente, tarefa inválida")
             else:
                 lista_id = []
-                dao = DaoListarTarefa()
                 cont = -1
                 for tarefas in todo.ListarTarefa():
                     cont += 1
