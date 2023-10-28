@@ -9,7 +9,8 @@ class DaoMudarTarefa:
         conteudo_Atualizado = conteudo.replace(tarefa_Antiga, tarefa_Nova)
         with open(Arquivo, "w") as arquivo2:
             arquivo2.write(conteudo_Atualizado)
-
+        return True
+    
 class DaoAdicionarTarefa:
     def __init__(self, tarefa):
         self.tarefa = tarefa

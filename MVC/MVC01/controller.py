@@ -33,12 +33,14 @@ class ControllerMudarTarefa:
                             if id == lista_id[indice]:
                                 if Letra == "A":
                                     tarefa_Atualizada = f"A\t{id}\t{tarefa_Nova}\n"
-                                    todo.MudarTarefa(tarefas, tarefa_Atualizada)
-                                    break
+                                    if todo.MudarTarefa(tarefas, tarefa_Atualizada) == True:
+                                        print("Tarefa alterada com sucesso!!!")
+                                        break
                                 else:
                                     tarefa_Atualizada = f"{Letra}\t{id}\t{tarefa_A}\n"
-                                    todo.MudarTarefa(tarefas, tarefa_Atualizada)
-                                    break
+                                    if todo.MudarTarefa(tarefas, tarefa_Atualizada) == True:
+                                        print("Status da tarefa modificado com sucesso!!")
+                                        break
                 else:
                     print("Indice inválido, tente novamente")
         except Exception:
