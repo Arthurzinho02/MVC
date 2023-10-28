@@ -5,7 +5,7 @@ C	6053	Me tacar de um predio
 E	5223	comer
 E	2506	comprar
 C	2127	Ir ao shopping
-A	3667	comprar chocolate
+C	3667	COmprar açai
 C	8315	Ir ao parque
 E	5893	Festa fantasia
 A	2379	Shoppe

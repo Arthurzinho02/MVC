@@ -7,11 +7,10 @@ class ControllerMudarTarefa:
             if tarefa_Nova == "":
                 print("Digite novamente, tarefa inválida")
             else:
-
                 lista_id = []
                 dao = DaoListarTarefa()
                 cont = -1
-                for tarefas in dao.listar():
+                for tarefas in todo.ListarTarefa():
                     cont += 1
                     if cont >= 1:
                         letra = tarefas[:1]
@@ -23,7 +22,7 @@ class ControllerMudarTarefa:
                 if indice <= len(lista_id):
                     indice -=1
                     cont = -1
-                    for tarefas in dao.listar():
+                    for tarefas in todo.ListarTarefa():
                         cont += 1
                         if cont >= 1:
                             lista = tarefas.split("\t", 4)               
