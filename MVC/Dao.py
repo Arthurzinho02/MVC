@@ -15,9 +15,9 @@ class DaoAdicionarTarefa:
     def __init__(self, tarefa):
         self.tarefa = tarefa
 
-    def AdicionarTarefa(self, x):
+    def AdicionarTarefa(self):
         with open(Arquivo, "a") as arquivo:
-            arquivo.write(f"A\t{x}\t{self.tarefa}\n")
+            arquivo.write(self.tarefa)
         return True
         
 class DaoListarTarefa:

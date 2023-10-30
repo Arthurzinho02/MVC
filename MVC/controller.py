@@ -48,10 +48,9 @@ class ControllerMudarTarefa:
 class ControllerAdicionarTarefa:
     def __init__(self, tarefa):
         try:
-            self.tarefa = tarefa
             x = randint(1000,9999)
             cont = -1
-            if len(todo.ListarTarefa()) > 1:
+            if len(todo.ListarTarefa()) > 0:
                 for tarefas in todo.ListarTarefa():
                     cont += 1
                     if cont >= 1:
@@ -59,10 +58,11 @@ class ControllerAdicionarTarefa:
                         id = lista[1]
                         id = int(id)
                         if x != id: 
-                            if self.tarefa == "":
+                            if tarefa == "":
                                 print("Digite novamente, tarefa inválida")
                             else:
-                                if todo.AdicionarTarefas(self.tarefa, x) == True:
+                                tarefa_Nova = f"A\t{x}\t{tarefa}\n"
+                                if todo.AdicionarTarefas(tarefa_Nova) == True:
                                     print("Tarefa adicionada")
                                     break
                                 else:
@@ -71,10 +71,11 @@ class ControllerAdicionarTarefa:
                         else:
                             x = randint(1000,9999)
             else:
-                if self.tarefa == "":
+                if tarefa == "":
                     print("Digite novamente, tarefa inválida")
                 else:
-                    if todo.AdicionarTarefas(self.tarefa, x) == True:
+                    tarefa_Nova = f"Status:\tID:\tTarefa:\nA\t{x}\t{tarefa}\n"                    
+                    if todo.AdicionarTarefas(tarefa_Nova) == True:
                         print("Tarefa adicionada")
                     else:
                         print("Tarefa não foi adiconada")
